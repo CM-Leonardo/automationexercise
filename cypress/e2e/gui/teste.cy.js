@@ -10,4 +10,10 @@ describe('Deve acessar a tela inicial e validar a exibição do botão home', ()
 
     cy.get('@HomeButton').should('be.visible')
   })
+
+  it('Deve clicar no botão fazer login', () => {
+    cy.visit('/')
+    cy.get('[class="fa fa-lock"]').click()
+    cy.url().should('includes', '/login')
+  })
 })
