@@ -1,12 +1,12 @@
 
-import { userData } from "../../../functions/envVariaveis"
+import { userData } from '../../../functions/envVariaveis'
 
 describe('Cadastro de usuário', () => {
   it('Deve fazer o cadastro de usuário com informações validas', () => {
     cy.visit('/')
 
     //Valida exibição da pagina inicial
-   cy.validaPaginaHome()
+    cy.validaPaginaHome()
 
     //Valida/seleciona botão de login/sinup
     cy.contains('Signup / Login')

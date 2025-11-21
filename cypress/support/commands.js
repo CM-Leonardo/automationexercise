@@ -1,3 +1,4 @@
+//valida pagina inicial
 Cypress.Commands.add('validaPaginaHome', () => {
   cy.get('[class="col-sm-6"]').as('headers')
     .find('h1').eq(0).should('contain.text', 'AutomationExercise')
@@ -45,6 +46,16 @@ Cypress.Commands.add('cadastroUsuario', (data) => {
   cy.get('[data-qa="create-account"]')
     .should('be.visible')
     .click()
+})
+
+//faz login
+Cypress.Commands.add('login', (data) => {
+  cy.get('[data-qa="login-email"]').should('be.visible')
+    .type(data.userEmail)
+  cy.get('[data-qa="login-password"]').should('be.visible')
+    .type(data.userPassword)
+  cy.get('[data-qa="login-button"]')
+    .should('be.visible').click()
 })
 
 Cypress.Commands.add('validaUsuarioLogado', (data) => {

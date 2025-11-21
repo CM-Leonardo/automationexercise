@@ -15,6 +15,14 @@ const userData = {
     mobileNumber : faker.phone.number()
 }
 
+//informações para logins 
+const loginData = {
+    userEmail: Cypress.env("USER_EMAIL"),
+    userPassword: Cypress.env("USER_PASSWORD"),
+    nameUser: "CypressTester"
+}
+
 export {
-    userData
+    userData,
+    loginData
 }
