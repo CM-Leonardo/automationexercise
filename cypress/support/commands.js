@@ -1,3 +1,5 @@
+import { login } from "../../functions/utils/envVariaveis"
+
 //valida pagina inicial
 Cypress.Commands.add('validaPaginaHome', () => {
   cy.get('[class="col-sm-6"]').as('headers')
@@ -49,11 +51,11 @@ Cypress.Commands.add('cadastroUsuario', (data) => {
 })
 
 //faz login
-Cypress.Commands.add('login', (data) => {
+Cypress.Commands.add('login', (email = login.EMAIL, password = login.PASSWORD) => {
   cy.get('[data-qa="login-email"]').should('be.visible')
-    .type(data.userEmail)
+    .type(email, { log: false })
   cy.get('[data-qa="login-password"]').should('be.visible')
-    .type(data.userPassword)
+    .type(password, { log: false })
   cy.get('[data-qa="login-button"]')
     .should('be.visible').click()
 })

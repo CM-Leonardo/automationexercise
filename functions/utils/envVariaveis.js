@@ -1,6 +1,6 @@
 import { fakerDE as faker } from '@faker-js/faker';
 
-const userData = {
+ export const userData = {
     nameUser: faker.lorem.words(1),
     emailUser: faker.internet.email(),
     password: faker.internet.password(),
@@ -16,13 +16,20 @@ const userData = {
 }
 
 //informações para logins 
-const loginData = {
-    userEmail: Cypress.env("USER_EMAIL"),
-    userPassword: Cypress.env("USER_PASSWORD"),
-    nameUser: "CypressTester"
+export const login = {
+    EMAIL: Cypress.env("USER_EMAIL"),
+    PASSWORD: Cypress.env("USER_PASSWORD"),
+    NAME: "CypressTester"
 }
 
-export {
-    userData,
-    loginData
+//variaveis para preencher a função de navegação
+export const contains = { 
+    HOME: ' Home',
+    PRODUCTS: ' Products',
+    CART: ' Cart',
+    SIGNUP_LOGIN: ' Signup / Login',
+    TEST_CASES: ' Test Cases',
+    API_TEST: ' API Testing',
+    VIDEO: ' Video Tutorials',
+    CONTACT: ' Contact us'
 }
